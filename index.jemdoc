@@ -1,0 +1,23 @@
+# jemdoc: menu{MENU}{index.html}
+# jemdoc: addcss{slideshow.css}
+~~~
+{}{table}{TABLE_HOME_HEAD}
+{{<img class="float" style="width: 100px; margin-left:-15px; margin-top: 13px;" src="images/home_photo1.jpg"></img>}}
+{{<h1 style="padding-bottom: 22px; margin-bottom: 0.3em; margin-top: 5px;">Himani Ananthula <span style = "display: block; padding-top: 10px; color: black; font-weight: normal;">More information but within the line-size limit.</span></h1>}}
+~~~
+
+I am a PhD Candidate in Operations Management at the Kellogg School of Management, Northwestern University,  advised by Professor. Achal Bassamboo and Professor. Milind Sohoni. Before pursuing my PhD, I completed my undergraduate studies at the Indian Institute of Technology, Bombay, in 2016, where I majored in Mechanical Engineering and minored in Electrical Engineering.
+
+My research examines labor supply dynamics in the gig economy and develops optimal strategies for service providers managing flexible workforce. I employ data-driven analytical modeling and econometric models in my work.
+
+~~~
+
+
+== Upcoming Talks
+~~~
+<ul>
+    <li>INFORMS Annual Meeting, Seattle, October 2024</li>
+    <li>POMS Conference, Minneapolis, May 2024</li>
+    <li>MSOM Conference, Chicago, June 2024</li>
+</ul>
+~~~

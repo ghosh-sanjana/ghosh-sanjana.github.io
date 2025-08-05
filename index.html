@@ -1,58 +1,477 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
-  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta name="generator" content="jemdoc, see http://jemdoc.jaboc.net/" />
-<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-<link rel="stylesheet" href="jemdoc.css" type="text/css" />
-<link rel="stylesheet" href="slideshow.css" type="text/css" />
-<title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Academic Profile</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        .sidebar {
+            width: 300px;
+            background-color: #f8f9fa;
+            padding: 40px 30px;
+            border-right: 1px solid #eee;
+            position: fixed;
+            height: 100vh;
+            overflow-y: auto;
+        }
+
+        .main-content {
+            flex: 1;
+            margin-left: 300px;
+            padding: 40px;
+            max-width: 900px;
+        }
+
+        .profile-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #fff;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+
+        .profile-content h1 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: #2c3e50;
+        }
+
+        .profile-content p {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 0;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+
+        nav {
+            margin-top: 30px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        nav a {
+            color: #666;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            cursor: pointer;
+            padding: 8px 12px;
+            border-radius: 4px;
+            display: block;
+        }
+
+        nav a:hover {
+            color: #2980b9;
+            background-color: #e3f2fd;
+        }
+
+        .about-section {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+        }
+
+        .about-section h3 {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            color: #2c3e50;
+            font-weight: 600;
+        }
+
+        .about-section p {
+            font-size: 0.9rem;
+            text-align: justify;
+            margin-bottom: 15px;
+        }
+
+        .news-box-sidebar {
+            background-color: #fff;
+            border-left: 3px solid #3498db;
+            padding: 12px 15px;
+            margin: 20px 0;
+            border-radius: 0 4px 4px 0;
+            font-size: 0.85rem;
+        }
+
+        .news-box-sidebar strong {
+            color: #2980b9;
+        }
+
+        .section {
+            margin-bottom: 60px;
+            padding-top: 20px;
+        }
+
+        .section h2 {
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            color: #2c3e50;
+            font-weight: 600;
+        }
+
+        .section h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: #34495e;
+            font-weight: 600;
+        }
+
+        .section p {
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        .publication-item {
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .publication-item:last-child {
+            border-bottom: none;
+        }
+
+        .publication-title {
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 8px;
+        }
+
+        .publication-authors {
+            color: #666;
+            margin-bottom: 5px;
+            font-style: italic;
+        }
+
+        .publication-venue {
+            color: #2980b9;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+
+        .publication-awards {
+            margin-top: 10px;
+        }
+
+        .publication-awards ul {
+            margin-left: 20px;
+        }
+
+        .publication-awards li {
+            margin-bottom: 5px;
+            color: #27ae60;
+        }
+
+        .experience-item {
+            margin-bottom: 25px;
+        }
+
+        .experience-title {
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .experience-org {
+            color: #2980b9;
+            font-weight: 500;
+        }
+
+        .experience-date {
+            color: #666;
+            font-style: italic;
+        }
+
+        .experience-description {
+            margin-top: 8px;
+            color: #555;
+        }
+
+        a {
+            color: #2980b9;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .contact-info {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 30px;
+            border-top: 1px solid #eee;
+        }
+
+        .contact-info a {
+            margin: 0 15px;
+            color: #666;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .sidebar {
+                width: 100%;
+                position: relative;
+                height: auto;
+                padding: 20px;
+            }
+
+            .main-content {
+                margin-left: 0;
+                padding: 20px;
+            }
+
+            .profile-image {
+                width: 120px;
+                height: 120px;
+            }
+
+            .profile-content h1 {
+                font-size: 1.5rem;
+            }
+
+            nav ul {
+                flex-direction: row;
+                gap: 10px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            nav a {
+                padding: 6px 10px;
+                font-size: 0.9rem;
+            }
+
+            .about-section {
+                margin-top: 20px;
+            }
+
+            .section h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
 </head>
 <body>
-<table summary="Table for page layout." id="tlayout">
-<tr valign="top">
-<td id="layout-menu">
-<div class="menu-category">Research-Group-Name</div>
-<div class="menu-item"><a href="/index.html" class="current">Home</a></div>
-<div class="menu-item"><a href="/members.html">Members</a></div>
-<div class="menu-item"><a href="/teaching.html">Teaching</a></div>
-<div class="menu-item"><a href="/news.html">News</a></div>
-<div class="menu-category">Research</div>
-<div class="menu-item"><a href="/research.html">Active&nbsp;Topics</a></div>
-<div class="menu-item"><a href="/publications.html">Publications</a></div>
-<div class="menu-item"><a href="/software.html">Software</a></div>
-<div class="menu-category">Contacts</div>
-<div class="menu-item"><a href="/contacts.html">Contact&nbsp;us</a></div>
-</td>
-<td id="layout-content">
-<table id="TABLE_HOME_HEAD">
-<tr class="r1"><td class="c1"><img class="float" style="width: 100px; margin-left:-15px; margin-top: 13px;" src="images/home_photo1.jpg" />
-<h1 style="padding-bottom: 22px; margin-bottom: 0.3em; margin-top: 5px;">Himani Ananthula <span style = "display: block; padding-top: 10px; color: black; font-weight: normal;">More information but within the line-size limit.</span></h1>
-</td></tr></table>
-<p>I am a PhD Candidate in Operations Management at the Kellogg School of Management, Northwestern University,  advised by Professor. Achal Bassamboo and Professor. Milind Sohoni. Before pursuing my PhD, I completed my undergraduate studies at the Indian Institute of Technology, Bombay, in 2016, where I majored in Mechanical Engineering and minored in Electrical Engineering.</p>
-<p>My research examines labor supply dynamics in the gig economy and develops optimal strategies for service providers managing flexible workforce. I employ data-driven analytical modeling and econometric models in my work.</p>
-<h2>Upcoming Talks</h2>
-<p><b> INFORMS Annual Meeting, Seattle, October 2024
-</b> POMS Conference, Minneapolis, May 2024
-* MSOM Conference, Chicago, June 2024</p>
-<div class="infoblock">
-<div class="blockcontent">
-<div id="footer">
-<div id="footer-text">
-Page generated 2025-08-04 21:33:35 UTC, by <a href="http://jemdoc.jaboc.net/">jemdoc</a>.
-</div>
-</div>
-</td>
-</tr>
-</table>
-<!-- This script will be injected in the pages of the site to collect visiting info fpr Google analytics.-->
-<!-- Use your GoogleAnalytics ID, update the following code and the MY_ID with yours (used two times.)  -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=MY_ID"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'MY_ID');
-</script>
+    <div class="container">
+        <div class="sidebar">
+            <div class="profile-section">
+                <img src="https://via.placeholder.com/150x150/4a90e2/ffffff?text=Your+Photo" alt="Your Name" class="profile-image">
+                <div class="profile-content">
+                    <h1>Your Name Here</h1>
+                    <p>Your Title | Your Institution</p>
+                </div>
+            </div>
+            
+            <nav>
+                <ul>
+                    <li><a href="#about" class="nav-link">About Me</a></li>
+                    <li><a href="#publications" class="nav-link">Publications</a></li>
+                    <li><a href="#teaching" class="nav-link">Teaching</a></li>
+                    <li><a href="#talks" class="nav-link">Recent Talks</a></li>
+                    <li><a href="#experience" class="nav-link">Experience</a></li>
+                </ul>
+            </nav>
+
+            <div class="about-section">
+                <h3>About Me</h3>
+                <p>
+                    I am a [Your Position] at <a href="#">[Your Institution]</a>. I graduated from <a href="#">[Your University]</a>, where I was fortunate to be advised by <a href="#">[Your Advisor]</a>.
+                </p>
+                <p>
+                    My research focuses on [Your Research Area]. Through [Your Approach], I apply tools from [Your Methods] to [Your Applications].
+                </p>
+                
+                <div class="news-box-sidebar">
+                    <strong>NEWS:</strong> [Your latest news or announcement here]
+                </div>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <section id="publications" class="section">
+            <h2>Publications and Preprints</h2>
+            
+            <div class="publication-item">
+                <div class="publication-title">
+                    <a href="#">Your Paper Title Here</a>
+                </div>
+                <div class="publication-authors">
+                    with Co-Author Name and Another Co-Author.
+                </div>
+                <div class="publication-venue">
+                    Journal Name, Year.
+                </div>
+                <div class="publication-awards">
+                    <ul>
+                        <li>Winner of Best Paper Award, Conference 2024</li>
+                        <li>Accepted for presentation at Major Conference</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="publication-item">
+                <div class="publication-title">
+                    <a href="#">Another Paper Title</a>
+                </div>
+                <div class="publication-authors">
+                    with Co-Author Name.
+                </div>
+                <div class="publication-venue">
+                    Under Review at Journal Name, 2025.
+                </div>
+                <div class="publication-awards">
+                    <ul>
+                        <li>Accepted for presentation at Workshop 2024</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3>Work in Progress</h3>
+            <div class="publication-item">
+                <div class="publication-title">
+                    Your Work in Progress Title
+                </div>
+                <div class="publication-authors">
+                    with Co-Author Names.
+                </div>
+            </div>
+        </section>
+
+        <section id="teaching" class="section">
+            <h2>Teaching</h2>
+            
+            <div class="experience-item">
+                <div class="experience-title">Course Name, University Code | Teaching Assistant</div>
+                <div class="experience-description">
+                    Course level, Semester Year. (Number of students)
+                </div>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-title">Another Course, University Code | Instructor</div>
+                <div class="experience-description">
+                    Course level, Semester Year. (Number of students)
+                </div>
+            </div>
+        </section>
+
+        <section id="talks" class="section">
+            <h2>Recent Talks</h2>
+            
+            <div class="experience-item">
+                <div class="experience-title">Your Talk Title</div>
+                <div class="experience-description">
+                    Conference Name, Date, Location
+                </div>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-title"><a href="#">Paper Title</a></div>
+                <div class="experience-description">
+                    Multiple venues: University A, University B, Conference C<br>
+                    Conference Name, Date, Location<br>
+                    Workshop Name, Date, Location
+                </div>
+            </div>
+        </section>
+
+        <section id="experience" class="section">
+            <h2>Experience</h2>
+            
+            <div class="experience-item">
+                <div class="experience-title">Research Position</div>
+                <div class="experience-org">Institution Name</div>
+                <div class="experience-date">Start Year - End Year</div>
+                <div class="experience-description">
+                    Supervisor: Name<br>
+                    Brief description of research focus
+                </div>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-title">Industry Position</div>
+                <div class="experience-org">Company Name</div>
+                <div class="experience-date">Summer Year</div>
+                <div class="experience-description">
+                    Managers/Mentors: Names<br>
+                    Description of work and responsibilities
+                </div>
+            </div>
+
+            <h3>Professional Services</h3>
+            <div class="experience-item">
+                <div class="experience-title">Service Role, Organization</div>
+                <div class="experience-date">Year</div>
+            </div>
+
+            <h3>Awards and Honors</h3>
+            <div class="experience-item">
+                <div class="experience-title">Award Name, Institution</div>
+                <div class="experience-date">Year</div>
+            </div>
+                    </section>
+        </div>
+
+        <footer class="contact-info">
+            <a href="mailto:your.email@university.edu">Email</a>
+            <a href="#">CV</a>
+            <a href="#">Google Scholar</a>
+            <a href="#">LinkedIn</a>
+        </footer>
+    </div>
+
+    <script>
+        // Smooth scrolling is handled by CSS, no JavaScript needed for basic anchor links
+    </script>
 </body>
 </html>

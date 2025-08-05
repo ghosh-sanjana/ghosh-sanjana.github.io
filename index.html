@@ -12,26 +12,32 @@
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
       background-color: #fff;
       color: #333;
-      line-height: 1.6;
+      line-height: 1.7;
     }
     .container {
       display: flex;
       min-height: 100vh;
     }
     .sidebar {
-      width: 35%;
+      width: 20%;
       background-color: #f9f9f9;
       padding: 20px;
-      border-right: 1px solid #ddd;
+      border-right: 0.5px solid #ddd;
       display: flex;
       flex-direction: column;
-      align-items: center;
+      align-items: center; /* Center all sidebar content */
+    }
+    .sidebar header {
+      display: flex;
+      flex-direction: column;
+      align-items: center; /* Center the header content */
+      margin-bottom: 20px;
     }
     .sidebar header img {
       width: 200px;
       height: 200px;
       border-radius: 50%;
-      object-fit:cover;
+      object-fit: cover;
       margin-bottom: 15px;
       object-position: top;
     }
@@ -39,39 +45,39 @@
       font-size: 1.8rem;
       margin: 10px 0;
       color: #2c3e50;
-      text-align: center;
+      text-align: center; /* Center the name */
     }
     .sidebar .nav {
       display: flex;
       flex-direction: column;
-      align-items: flex-start;  /* left-align the links */
-      gap: 9px;                 /* space between items */
-      margin-top: 20px;
+      align-items: center; /* Center the navigation links */
+      gap: 9px;
+      margin-top: 10px;
       font-size: 1.4rem;
       text-align: center;
     }
     .sidebar .nav a {
       color: #666;
       text-decoration: none;
-      margin: 0 6px;
+      margin: 5px;
     }
     .sidebar .nav a:hover {
       color: #000;
     }
     .sidebar .contact {
       display: flex;
-      flex-wrap: nowrap;
-      justify-content: center;
+      flex-wrap: wrap;
+      justify-content: center; /* Center the contact links */
       gap: 10px;
       margin-top: 15px;
     }
     .sidebar .contact a {
       color: #2d3f74;
       text-decoration: none;
-      font-size: 0.9rem;
+      font-size: 1.3rem;
       display: flex;
-      align-items: center;
-      gap: 4px;
+      align-items: center; /* Fixed: was 'right', now properly centers icon and text */
+      gap: 5px; /* Reduced gap between icon and text */
     }
     .sidebar .contact a:hover {
       text-decoration: underline;
@@ -79,8 +85,8 @@
     .main-content {
       flex: 1;
       padding: 40px;
-      max-width: 55%;
-      margin: 0 auto;
+      max-width: 40%;
+      margin: 0 10% 0 7%; /* Simplified margin syntax */
     }
     hr {
       border: none;
@@ -130,6 +136,50 @@
       width: 100%;
       text-align: center;
     }
+
+    /* --- Mobile / small-screen adjustments --- */
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+      .sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #ddd;
+        padding: 15px;
+      }
+      .sidebar header img {
+        width: 140px;
+        height: 140px;
+      }
+      .sidebar .nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+        margin-top: 15px;
+      }
+      .sidebar .contact {
+        justify-content: center;
+        margin-top: 12px;
+      }
+      .main-content {
+        max-width: 100%;
+        padding: 20px;
+        margin: 0;
+      }
+      h2 {
+        font-size: 1.2rem;
+      }
+      .talk-list li {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .talk-list li .date {
+        margin-left: 0;
+        margin-top: 4px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -137,7 +187,9 @@
     <aside class="sidebar">
       <header>
         <img src="/images/home_photo1.jpg" alt="Himani Ananthula">
-        <h1>Himani Ananthula</h1>
+        <h1><Large>Himani Ananthula</Large></h1>
+        <p><small>PhD Candidate in Operations Management</small></p>
+        <p><small>Kellogg School of Management </small></p>
       </header>
       <nav class="nav">
         <a href="#about">About Me</a> 
@@ -154,29 +206,15 @@
     </aside>
     <main class="main-content">
       <section id="about">
-        <h2>Himani Ananthula</h2>
+        <h2><span style="font-size: 1.7rem;">Himani Ananthula</Large></h2>
         <p>I am a PhD Candidate in Operations Management at the Kellogg School of Management, Northwestern University. Before pursuing my PhD, I completed my undergraduate studies at the Indian Institute of Technology, Bombay, in 2016, where I majored in Mechanical Engineering and minored in Electrical Engineering.</p>
+        <div style="height: 1rem;"></div>
         <p>My research examines labor supply dynamics in the gig economy and develops optimal strategies for service providers managing flexible workforces. I employ data-driven analytical modeling and econometric methods in my work.</p>
+        <div style="height: 1rem;"></div>
         <p><strong>Research Interests/Methodologies:</strong> Gig Economy, Transportation &amp; Logistics, Service Operations, Stochastic Modeling, Causal Inference, Large-Scale Optimization</p>
         <div class="news-box">
           <strong>I am on the 2025–2026 academic job market.</strong>
         </div>
-      </section>
-
-      <hr>
-      <section id="research">
-        <h2>Research</h2>
-        <ul>
-          <li><strong>Adapting to gig economy dynamics: network and staffing strategies for long-haul trucking platforms</strong> (with Milind Sohoni and Achal Bassamboo). R&amp;R at Management Science, Feb 2025
-            <ul>
-              <li>Accepted at MSOM SIG Conference 2025, Supply Chain Management track.</li>
-              <li>Finalist, College of SCM Best Student Paper Award, POMS Conference 2025.</li>
-            </ul>
-          </li>
-          <li><strong>Division of Labor and the On-Demand Economy: Implications for System Design</strong> (with Achal Bassamboo and Milind Sohoni). Work in progress.</li>
-          <li><strong>A Modified Benders Algorithm for Relay Network Design Resilient to Supply Shocks</strong> (with Milind Sohoni and Achal Bassamboo). Draft under preparation.</li>
-          <li><strong>Cost of Work-Life Balance: Earnings Trade-offs for Long-Haul Truckers.</strong> Work in progress.</li>
-        </ul>
       </section>
 
       <hr>
@@ -185,14 +223,29 @@
         <ul>
           <li>3rd Annual Purdue SCOM Conference, West Lafayette | August 22–24, 2025 | Time TBD | Session TBD.</li>
         </ul>
-        <h2>Recent Talks</h2>
+        <!-- <h2>Recent Talks</h2>
         <ul>
           <li>2025 INFORMS MSOM Conference SIG Day, London | Session: Empirical Research in Supply Chains. <em>Adapting to Gig Economy Dynamics: Network and Staffing Strategies for Long-Haul Trucking Platforms</em>.</li>
           <li>2025 Annual POMS Conference, Atlanta | College of SCM Best Student Paper Presentation. <em>Adapting to Gig Economy Dynamics: Network and Staffing Strategies for Long-Haul Trucking Platforms</em>.</li>
           <li>2025 Annual POMS Conference, Atlanta | Service Design Framework. <em>Flexible Workforce and Endogenous Behavior: Implications for Service System Design</em>.</li>
-        </ul>
+        </ul> -->
       </section>
 
+      <hr>
+      <section id="research">
+        <h2>Research</h2>
+        <ul>
+          <li><strong>Adapting to gig economy dynamics: network and staffing strategies for long-haul trucking platforms</strong> <small> (with Milind Sohoni and Achal Bassamboo). R&amp;R at Management Science, Feb 2025 </small>
+            <ul>
+              <li>Accepted at MSOM SIG Conference 2025, Supply Chain Management track.</li>
+              <li>Finalist, College of SCM Best Student Paper Award, POMS Conference 2025.</li>
+            </ul>
+          </li>
+          <li><strong>Division of Labor and the On-Demand Economy: Implications for System Design</strong> <small>(with Achal Bassamboo and Milind Sohoni). Work in progress.</small> </li> 
+          <li><strong>A Modified Benders Algorithm for Relay Network Design Resilient to Supply Shocks</strong> <small>(with Milind Sohoni and Achal Bassamboo). Draft under preparation.</small> </li>
+          <li><strong>The Cost of Work-Life Balance: Earnings Trade-offs for Long-Haul Truckers.</strong> <small>(with Achal Bassamboo and Milind Sohoni). Work in progress.</small> </li> 
+        </ul>
+      </section>
       <hr>
       <section id="teaching">
         <h2>Teaching</h2>
@@ -211,7 +264,7 @@
           </li>
           <li>MBA core course, OPNS-430, Operations Management, 2021–2023.
             <ul>
-              <li><em>Instructors:</em> Achal Bassamboo, Anton Braverman, Itai Gurvich, Martin Lariviere, Sebastien Martin.</li>
+              <li><em> <small> </small>Instructors:</em> Achal Bassamboo, Anton Braverman, Itai Gurvich, Martin Lariviere, Sebastien Martin.</small></li>
               <li><em>Evaluations:</em> Mean – 5.2/6, Median – 5.4/6.</li>
             </ul>
           </li>

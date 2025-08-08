@@ -1,317 +1,407 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-      background-color: #fff;
-      color: #333;
-      line-height: 1.7;
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  background-color: #fff;
+  color: #333;
+  line-height: 1.7;
+  font-size: 16px; /* Base font size */
+}
+
+.container {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  width: 25%;
+  background-color: #f9f9f9;    
+  padding: 20px;
+  padding-top: 150px;
+  border-right: 0.5px solid #ddd;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sidebar header {
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 50%;
+  margin-bottom: 25px;
+}
+
+.sidebar header img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  object-position: center;
+  transform: scale(1.2);
+  transform-origin: top;
+}
+
+.sidebar header h1 {
+  font-size: 1.75rem; /* 28px - Main heading */
+  margin: 10px 0;
+  color: #2c3e50;
+  text-align: center;
+  font-weight: 600;
+}
+
+.sidebar .nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1px;
+  margin-top: 10px;
+  font-size: 1.125rem; /* 18px - Navigation links */
+  text-align: center;
+}
+
+.sidebar .nav a {
+  color: #666;
+  text-decoration: none;
+  margin: 5px;
+}
+
+.sidebar .nav a:hover {
+  color: #000;
+}
+
+.sidebar .contact {         
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.sidebar .contact a {
+  color: #4e2a84;
+  text-decoration: none;
+  font-size: 1rem; /* 16px - Contact links */
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.sidebar .contact a:hover {
+  text-decoration: underline;
+}
+
+.kellogg-logo-container {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 10;
+}
+
+.kellogg-logo-top {
+  width: 250px;
+  height: auto;
+  opacity: 1.3;
+}
+
+.main-content {
+  flex: 1;
+  padding: 40px;
+  max-width: 70%;
+  margin: 5% 10% 10% 7%;
+  font-size: 1rem; /* 16px - Body text */
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #ddd;
+  margin: 30px 0;
+}
+
+h2 {
+  font-size: 1.5rem; /* 24px - Section headings */
+  color: #4e2a84;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+h3 {
+  font-size: 1.25rem; /* 20px - Subsection headings */
+  color: #333;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+/* Top-level lists: light-grey squares */
+ul {
+  list-style-type: square;
+  list-style-position: outside;
+  padding-left: 1.5em;
+  margin: 10px 0 20px;
+  font-size: 1rem; /* 16px - List items */
+}
+
+ul > li::marker {
+  color: #bbb;
+}
+
+/* Nested lists: circles */
+ul ul {
+  list-style-type: circle;
+  list-style-position: outside;
+  padding-left: 1.5em;
+  margin-top: 5px;
+  font-size: 1rem; /* 16px - Nested list items */
+}
+
+ul ul > li::marker {
+  color: #666;
+}
+
+a.inline-link {
+  color: #c2d9e9;
+  text-decoration: none;
+  font-size: inherit; /* Inherit from parent */
+}
+
+a.inline-link:hover {
+  text-decoration: underline;
+}
+
+.news-box {
+  background-color: #eef9ff;
+  padding: 10px;
+  border-left: 5px solid #125887;
+  margin-top: 15px;
+  width: 100%;
+  text-align: center;
+  font-size: 1rem; /* 16px */
+}
+.presentations-container {
+  display: flex;
+  gap: 25px;
+  margin-top: 0;
+  align-items: stretch;
+}
+
+.presentation-image {
+  flex: 0 0 100px;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: flex-start;
+}
+
+.presentation-image img {
+  width: 3000px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 4px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.presentations-content {
+  flex: 1;
+  color: #333;
+  font-size: 1rem; /* 16px */
+}
+
+.presentation-group {
+  margin-bottom: 30px;
+}
+
+.presentation-group h3 {
+  color: #333;
+  font-size: 1.25rem; /* 20px - Consistent with h3 */
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.presentation-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.presentation-list li {
+  color: #333;
+  margin-bottom: 8px;
+  padding-left: 40px;
+  position: relative;
+  font-size: 1rem; /* 16px */
+  text-indent: 0;
+}
+
+.presentation-list li::before {
+  content: "■";
+  color: #666;
+  position: absolute;
+  left: 20px;
+  font-size: 1rem; /* 16px - Match standard list bullets */
+}
+
+#presentations {
+  padding: 20px 0;
+  margin: 15px 0;
+}
+
+#presentations h2 {
+  color: #4e2a84;
+  font-size: 1.5rem; /* 24px - Consistent with h2 */
+  margin-bottom: 20px;
+}
+
+.download-cv-box {
+  display: inline-block;
+  padding: 4px 8px;
+  margin-left: 10px;
+  background-color: #4e2a84;
+  color: white;
+  text-decoration: none;
+  font-size: 0.75rem; /* 12px - Small button text */
+  font-weight: normal;
+  border-radius: 10px;
+  animation: blink 1.5s infinite;
+  vertical-align: middle;
+}
+
+.download-cv-box:hover {
+  background-color: #3d1f6b;
+  animation-play-state: paused;
+}
+
+/* @keyframes blink {
+    0%, 50% {
+        opacity: 1;
     }
-    .container {
-      display: flex;
-      min-height: 100vh;
+    51%, 100% {
+        opacity: 0.3;
     }
-    .sidebar {
-      width: 25%;
-      background-color: #f9f9f9;    
-      padding: 20px;
-      padding-top: 150px;
-      border-right: 0.5px solid #ddd;
-      display: flex;
-      flex-direction: column;
-      align-items: center; /* Center all sidebar content */
-    }
-    .sidebar header {
-        /* keep the same 180×180 container so sidebar doesn’t grow */
-        width: 200px;
-        height: 200px;
-        overflow: hidden;
-        border-radius: 50%;
-        margin-bottom: 25px;
-      }
-      .sidebar header img {
-        width: 200px;
-        height: 200px;
-        object-fit: cover;
-        object-position: center;
-        /* zoom in without changing container */
-        transform: scale(1.2);
-        transform-origin: top;
-      }
-    .sidebar header h1 {
-      font-size: 1.8rem;
-      margin: 10px 0;
-      color: #2c3e50;
-      text-align: center; /* Center the name */
-    }
-    .sidebar .nav {
-      display: flex;
-      flex-direction: column;
-      align-items: center; /* Center the navigation links */
-      gap: 1px;
-      margin-top: 10px;
-      font-size: 1.4rem;
-      text-align: center;
-    }
-    .sidebar .nav a {
-      color: #666;
-      text-decoration: none;
-      margin: 5px;
-    }
-    .sidebar .nav a:hover {
-      color: #000;
-    }
-    .sidebar .contact {         
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center; /* Center the contact links */
-      gap: 10px;
-      margin-top: 15px;
-    }
-    .sidebar .contact a {
-      color: #4e2a84;
-      text-decoration: none;
-      font-size: 1.3rem;
-      display: flex;
-      align-items: center; /* Fixed: was 'right', now properly centers icon and text */
-      gap: 5px; /* Reduced gap between icon and text */
-    }
-    .sidebar .contact a:hover {
-      text-decoration: underline;
-    }
-    .kellogg-logo-container {
-      position: absolute;
-      top: 10px;
-      left: 10px;
-      z-index: 10;
-    }
+} */
+
+/* --- Mobile / small-screen adjustments --- */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px; /* Slightly smaller base font on mobile */
+  }
   
-    .kellogg-logo-top {
-        width: 250px;
-        height: auto;
-        opacity: 1.3;
-    }
+  .container {
+    flex-direction: column;
+  }
+  
+  .sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #ddd;
+    padding: 15px;
+  }
+  
+  .sidebar header {
+    width: auto;
+    height: auto;
+    overflow: visible;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+  }
 
-    .main-content {
-      flex: 1;
-      padding: 40px;
-      max-width: 70%;
-      margin:  5% 10% 10% 7%; /* Simplified margin syntax */
-    }
-    hr {
-      border: none;
-      border-top: 1px solid #ddd;
-      margin: 30px 0;
-    }
-    h2 {
-      font-size: 1.5rem;
-      color: #4e2a84;
-      margin-bottom: 10px;
-    }
+  .sidebar header img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    object-position: center;
+    transform: none;
+    border-radius: 50%;
+  }
+  
+  .sidebar header h1 {
+    font-size: 1.5rem; /* 24px on mobile */
+  }
+  
+  .sidebar .nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 15px;
+    font-size: 1rem; /* 16px on mobile */
+  }
+  
+  .sidebar .contact {
+    justify-content: center;
+    margin-top: 12px;
+  }
+  
+  .sidebar .contact a {
+    font-size: 0.875rem; /* 14px on mobile */
+  }
+  
+  .download-cv-box {
+    display: block;
+    margin-left: 0;
+    margin-top: 8px;
+    text-align: center;
+    font-size: 0.75rem; /* 12px - consistent */
+  }
+  
+  .main-content {
+    max-width: 100%;
+    padding: 20px;
+    margin: 0;
+  }
+  
+  h2 {
+    font-size: 1.25rem; /* 20px on mobile */
+  }
+  
+  h3 {
+    font-size: 1.125rem; /* 18px on mobile */
+  }
+  
+  /* Mobile adjustments for presentations */
+  .presentations-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .presentation-image {
+    flex: none;
+    max-width: 100%;
+  }
+  
+  #presentations {
+    padding: 20px 0;
+    margin: 20px 0;
+  }
+  
+  #presentations h2 {
+    font-size: 1.25rem; /* 20px - consistent with mobile h2 */
+  }
+  
+  .presentation-group h3 {
+    font-size: 1.125rem; /* 18px - consistent with mobile h3 */
+  }
+  
+  .talk-list li {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .talk-list li .date {
+    margin-left: 0;
+    margin-top: 4px;
+  }
+  
+  .kellogg-logo-container {
+    position: static;
+    text-align: center;
+    margin-bottom: 15px;
+  }
 
-    /* Top-level lists: light-grey squares */
-    ul {
-      list-style-type: square;
-      list-style-position: outside;
-      padding-left: 1.5em;
-      margin: 10px 0 20px;
-    }
-    ul > li::marker {
-      color: #bbb;
-    }
-
-    /* Nested lists: circles */
-    ul ul {
-      list-style-type: circle;
-      list-style-position: outside;
-      padding-left: 1.5em;
-      margin-top: 5px;
-    }
-    ul ul > li::marker {
-      color: #666;
-    }
-
-    a.inline-link {
-      color: #c2d9e9;
-      text-decoration: none;
-    }
-    a.inline-link:hover {
-      text-decoration: underline;
-    }
-    .news-box {
-      background-color: #eef9ff;
-      padding: 10px;
-      border-left: 5px solid #125887;
-      margin-top: 15px;
-      width: 100%;
-      text-align: center;
-    }
-    .presentations-container {
-      display: flex;
-      gap: 30px;
-      margin-top: 20px;
-      align-items: stretch;
-    }
-    
-    .presentation-image {
-      flex: 0 0 100px;
-      width: 50px;
-      height: 50px;
-      display: flex;
-      align-items: flex-start;
-    }
-    
-    .presentation-image img {
-      width: 3000px;
-      height: 300px;
-      object-fit: cover;
-      border-radius: 4px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
-    
-    .presentations-content {
-      flex: 1;
-      color: #333;
-    }
-    
-    .presentation-group {
-      margin-bottom: 30px;
-    }
-    
-    .presentation-group h3 {
-      color: #333;
-      font-size: 1.2rem;
-      margin-bottom: 15px;
-      font-weight: 600;
-    }
-    
-    .presentation-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-    
-    .presentation-list li {
-      color: #333;
-      margin-bottom: 8px;
-      padding-left: 20px;
-      position: relative;
-    }
-    
-    .presentation-list li::before {
-      content: "■";
-      color: #666;
-      position: absolute;
-      left: 0;
-      font-size: 0.8rem;
-    }
-    
-    #presentations {
-      padding: 40px 0;
-      margin: 30px 0;
-    }
-    
-    #presentations h2 {
-      color: #4e2a84;
-      font-size: 1.3rem;
-      margin-bottom: 20px;
-    }
-
-    /* --- Mobile / small-screen adjustments --- */
-    @media (max-width: 768px) {
-      .container {
-        flex-direction: column;
-      }
-      .sidebar {
-        width: 100%;
-        border-right: none;
-        border-bottom: 1px solid #ddd;
-        padding: 15px;
-      }
-      .sidebar header {
-        width: auto;            /* let it size down */
-        height: auto;
-        overflow: visible;      /* don’t crop */
-        margin-bottom: 20px;    /* adjust as you like */
-        display: flex;
-        justify-content: center;
-      }
-    
-      /* Reset the img sizing & transform */
-      .sidebar header img {
-        width: 120px;           /* pick a mobile-friendly size */
-        height: 120px;
-        object-fit: cover;
-        object-position: center;
-        transform: none;        /* cancel scale(1.2) */
-        border-radius: 50%;
-      }
-      .sidebar .nav {
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 12px;
-        margin-top: 15px;
-      }
-      .sidebar .contact {
-        justify-content: center;
-        margin-top: 12px;
-      }
-      .main-content {
-        max-width: 100%;
-        padding: 20px;
-        margin: 0;
-      }
-      h2 {
-        font-size: 1.2rem;
-      }
-      
-      /* Mobile adjustments for presentations */
-      .presentations-container {
-        flex-direction: column;
-        gap: 20px;
-      }
-      
-      .presentation-image {
-        flex: none;
-        max-width: 100%;
-      }
-      
-      #presentations {
-        padding: 20px 0;
-        margin: 20px 0;
-      }
-      
-      #presentations h2 {
-        font-size: 1.2rem;
-      }
-      
-      .presentation-group h3 {
-        font-size: 1.1rem;
-      }
-      
-      .talk-list li {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-      .talk-list li .date {
-        margin-left: 0;
-        margin-top: 4px;
-      }
-      .kellogg-logo-container {
-        position: static;
-        text-align: center;
-        margin-bottom: 15px;
-     }
-    
-      .kellogg-logo-top {
-          width: 100px;
-      }
-      
-      .main-content {
-          padding-top: 20px; /* Reset padding on mobile */
-      }
-
-
-    }
-
-    
+  .kellogg-logo-top {
+    width: 100px;
+  }
+  
+  .main-content {
+    padding-top: 20px;
+  }
+}

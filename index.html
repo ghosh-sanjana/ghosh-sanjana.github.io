@@ -28,19 +28,22 @@
       align-items: center; /* Center all sidebar content */
     }
     .sidebar header {
-      display: flex;
-      flex-direction: column;
-      align-items: center; /* Center the header content */
-      margin-bottom: 20px;
-    }
-    .sidebar header img {
-      width: 200px;
-      height: 200px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin-bottom: 15px;
-      object-position: top;
-    }
+        /* keep the same 180×180 container so sidebar doesn’t grow */
+        width: 200px;
+        height: 200px;
+        overflow: hidden;
+        border-radius: 50%;
+        margin-bottom: 15px;
+      }
+      .sidebar header img {
+        width: 200px;
+        height: 200px;
+        object-fit: cover;
+        object-position: center;
+        /* zoom in without changing container */
+        transform: scale(1.2);
+        transform-origin: top;
+      }
     .sidebar header h1 {
       font-size: 1.8rem;
       margin: 10px 0;
@@ -88,6 +91,9 @@
       max-width: 70%;
       margin:  5% 10% 10% 7%; /* Simplified margin syntax */
     }
+    .sidebar > * {
+      margin-top: 150px;
+    } 
     hr {
       border: none;
       border-top: 1px solid #ddd;
@@ -290,7 +296,7 @@
   <div class="container">
     <aside class="sidebar">
       <header>
-        <img src="/images/home_photo1.jpg" alt="Himani Ananthula">
+        <img src="/images/Himani_Prof.jpeg" alt="Himani Ananthula">
         <h1><Large>Himani Ananthula</Large></h1>
         <p><small>PhD Candidate in Operations Management</small></p>
         <p><small>Kellogg School of Management </small></p>

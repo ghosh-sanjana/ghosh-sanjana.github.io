@@ -85,8 +85,8 @@
     .main-content {
       flex: 1;
       padding: 40px;
-      max-width: 50%;
-      margin: 0 10% 0 7%; /* Simplified margin syntax */
+      max-width: 70%;
+      margin:  5% 10% 10% 7%; /* Simplified margin syntax */
     }
     hr {
       border: none;
@@ -136,6 +136,76 @@
       width: 100%;
       text-align: center;
     }
+    .presentations-container {
+      display: flex;
+      gap: 30px;
+      margin-top: 20px;
+      align-items: stretch;
+    }
+    
+    .presentation-image {
+      flex: 0 0 100px;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: flex-start;
+    }
+    
+    .presentation-image img {
+      width: 3000px;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 4px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    .presentations-content {
+      flex: 1;
+      color: #333;
+    }
+    
+    .presentation-group {
+      margin-bottom: 30px;
+    }
+    
+    .presentation-group h3 {
+      color: #333;
+      font-size: 1.2rem;
+      margin-bottom: 15px;
+      font-weight: 600;
+    }
+    
+    .presentation-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    
+    .presentation-list li {
+      color: #333;
+      margin-bottom: 8px;
+      padding-left: 20px;
+      position: relative;
+    }
+    
+    .presentation-list li::before {
+      content: "■";
+      color: #666;
+      position: absolute;
+      left: 0;
+      font-size: 0.8rem;
+    }
+    
+    #presentations {
+      padding: 40px 0;
+      margin: 30px 0;
+    }
+    
+    #presentations h2 {
+      color: #4e2a84;
+      font-size: 1.3rem;
+      margin-bottom: 20px;
+    }
 
     /* --- Mobile / small-screen adjustments --- */
     @media (max-width: 768px) {
@@ -171,6 +241,31 @@
       h2 {
         font-size: 1.2rem;
       }
+      
+      /* Mobile adjustments for presentations */
+      .presentations-container {
+        flex-direction: column;
+        gap: 20px;
+      }
+      
+      .presentation-image {
+        flex: none;
+        max-width: 100%;
+      }
+      
+      #presentations {
+        padding: 20px 0;
+        margin: 20px 0;
+      }
+      
+      #presentations h2 {
+        font-size: 1.2rem;
+      }
+      
+      .presentation-group h3 {
+        font-size: 1.1rem;
+      }
+      
       .talk-list li {
         flex-direction: column;
         align-items: flex-start;
@@ -182,6 +277,15 @@
     }
   </style>
 </head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-R7EX98Q092"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-R7EX98Q092');
+</script>
 <body>
   <div class="container">
     <aside class="sidebar">
@@ -213,7 +317,7 @@
         <div style="height: 1rem;"></div>
         <p><strong>Research Interests/Methodologies:</strong> Gig Economy, Transportation &amp; Logistics, Service Operations, Stochastic Modeling, Causal Inference, Large-Scale Optimization</p>
         <div class="news-box">
-          <strong>I am on the 2025–2026 academic job market.</strong>
+          <strong>I am on the 2025–2026 academic job market</strong>
         </div>
       </section>
 
@@ -278,6 +382,38 @@
             <ul><li><em>Instructors:</em> Sunil Chopra, Achal Bassamboo, Benjamin Grant.</li></ul>
           </li>
         </ul>
+      </section>
+      <hr>
+      <section id="presentations">
+        <h2>Past presentations</h2>
+        
+        <div class="presentations-container">
+          <div class="presentations-content">
+            <div class="presentation-group">
+              <h3><em>Adapting Strategies for trucking platforms in the Gig Economy</em></h3>
+              <ul class="presentation-list">
+                <li> <em>(upcoming) </em> INFORMS Annual Conference | Atlanta, USA | October, 2025</li>
+                <li> <em>(upcoming) </em> 3rd Annual Purdue SCOM Conference, West Lafayette, IN | Aug, 2025</li>
+                <li>MSOM SIG conference (SCM) | London, UK | June, 2025</li>
+                <li>POMS Annual Conference | Atlanta, USA | May, 2025</li>
+                <li>INFORMS Annual Conference | Seattle, USA | October, 2024</li>
+                <li>INFORMS Annual Conference | Phoenix, USA | October, 2023</li>
+        
+              </ul>
+            </div>
+            
+            <div class="presentation-group">
+              <h3><em>Division of Labor and the On-Demand Economy: Implications for System Design</em></h3>
+              <ul class="presentation-list">
+                <li> <em>(upcoming) </em> INFORMS Annual Conference | Atlanta, USA | October, 2025</li>
+                <li>POMS Annual Conference | Atlanta, USA | May, 2025</li>
+              </ul>
+            </div>
+          <!-- </div>
+          <div class="presentation-image">
+            <img src="/images/presentations.jpg" alt="Conference presentation" />
+          </div>
+        </div> -->
       </section>
     </main>
   </div>

@@ -227,9 +227,23 @@
         border-bottom: 1px solid #ddd;
         padding: 15px;
       }
+      .sidebar header {
+        width: auto;            /* let it size down */
+        height: auto;
+        overflow: visible;      /* don’t crop */
+        margin-bottom: 20px;    /* adjust as you like */
+        display: flex;
+        justify-content: center;
+      }
+    
+      /* Reset the img sizing & transform */
       .sidebar header img {
-        width: 140px;
-        height: 140px;
+        width: 120px;           /* pick a mobile-friendly size */
+        height: 120px;
+        object-fit: cover;
+        object-position: center;
+        transform: none;        /* cancel scale(1.2) */
+        border-radius: 50%;
       }
       .sidebar .nav {
         flex-direction: row;

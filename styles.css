@@ -45,7 +45,7 @@ body {
   height: 200px;
   object-fit: cover;
   object-position: center;
-  transform: scale(1.5);
+  transform: scale(1.4);
   transform-origin: top center;
 }
 

@@ -18,9 +18,10 @@ body {
 }
 
 .sidebar {
-  width: 27%;
+  width: 30%;
   background-color: #fff;    
-  padding: 10px;
+  padding-left: 20px;
+  padding-right: 5px;
   padding-top: 150px;
   border-right: 1px solid #fff;
   display: flex;
@@ -38,7 +39,7 @@ body {
   background: #f6f6f6;
   border: 1px solid #e6e6e6;
   border-radius: 20px;
-  padding: 22px 10px;
+  padding: 10px 10px;
   display: flex;
   flex-direction: column;
   align-items: center;

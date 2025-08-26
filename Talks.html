@@ -1,0 +1,94 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Himani Ananthula – Teaching</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css">
+</head>
+<body>
+  <div class="container">
+    <aside class="sidebar">
+      <div class="sidebar-card">
+        <header>
+          <img src="https://kelloggphds.northwestern.edu/files/2025/07/INFORMS_PHOTO.jpeg" alt="Himani Ananthula">
+        </header>
+        <h1>Himani Ananthula</h1>
+        <p>PhD Candidate in Operations Management</p>
+        <p>Kellogg School of Management</p>
+        <nav class="nav">
+          <a href="index.html#about">About Me</a>
+          <a href="Talks.html#talks">Talks</a>
+          <a href="index.html#research">Research</a>
+          <a href="teaching.html">Teaching</a>
+          <a href="https://docsend.com/v/f7wvd/himm" target="_blank"> CV </a>
+        </nav>
+
+        <nav class="contact">
+          <a href="mailto:himani.ananthula@kellogg.northwestern.edu" target="_blank"><i class="fas fa-envelope"></i> </a>
+          <!-- <a href="https://docsend.com/v/f7wvd/himm"><i class="fas fa-file-alt"></i> </a> -->
+          <a href="https://scholar.google.com/citations?user=HlAODGAAAAAJ&hl=en" target="_blank"><i class="fas fa-graduation-cap"></i> </a>
+          <a href="https://www.linkedin.com/in/himani-ananthula-409a9472/" target="_blank"><i class="fab fa-linkedin"></i> </a>
+        </nav>
+      </div>
+    </aside>
+
+<main class="main-content">
+<section id="presentations">
+    <h2>Conference Talks</h2>
+    <div class="presentation-group"> 
+        <h3><em>Adapting Strategies for Trucking Platforms in the Gig Economy</em></h3>
+        <ul>
+            <li><em>(upcoming)</em> DSI Annual Conference| Orlando, USA | November, 2025</li>
+            <li><em>(upcoming)</em> INFORMS Annual Conference | Atlanta, USA | October, 2025</li>
+            <li><em> 3rd Annual Purdue SCOM Conference, West Lafayette, USA | Aug, 2025</li>
+            <li>MSOM SIG conference (SCM) | London, UK | June, 2025</li>
+            <li>POMS Annual Conference | Atlanta, USA | May, 2025</li>
+            <li>INFORMS Annual Conference | Seattle, USA | October, 2024</li>
+            <li>Behavioral Operations Conference, Boulder, USA | June, 2024</li>
+            <li>INFORMS Annual Conference | Phoenix, USA | October, 2023</li>
+        </ul>
+      </div>
+
+      <div class="presentation-group">
+        <h3><em>Division of Labor and the On-Demand Economy: Implications for System Design</em></h3>
+        <ul>
+            <li><em>(upcoming)</em> INFORMS Annual Conference | Atlanta, USA | October, 2025</li>
+            <li>POMS Annual Conference | Atlanta, USA | May, 2025</li>
+        </ul>
+        <h3><em>A Modified Benders Algorithm for Relay Network Design Resilient to Supply Shocks</em></h3>
+        <ul>
+            <li>POMS Annual Conference | Orlando, USA | May, 2023</li>
+            <li>INFORMS Annual Conference | Indianapolis, USA | October, 2022</li>
+        </ul>
+      </div>
+</section>
+<hr>
+</main>
+</div>
+<script>
+  // Active navigation highlighting for separate pages
+  function updateActiveNav() {
+    const navLinks = document.querySelectorAll('.nav-link');
+    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      const linkHref = link.getAttribute('href');
+      
+      // Check if this is the current page
+      if (linkHref === currentPage || 
+          (currentPage === 'index.html' && linkHref.startsWith('index.html#')) ||
+          (currentPage === '' && linkHref.startsWith('index.html#'))) {
+        link.classList.add('active');
+      }
+    });
+  }
+
+  // Update active navigation on page load
+  window.addEventListener('load', updateActiveNav);
+</script>
+</body>
+</html>

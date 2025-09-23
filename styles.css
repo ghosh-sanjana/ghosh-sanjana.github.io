@@ -826,3 +826,12 @@ section[id] {
   font-size: 0.9rem;  /* smaller than body (16px) */
   margin-top: 2px;    /* a little spacing under the degree */
 }
+
+/* Tighter space between Interests & Education columns */
+@media (min-width: 901px) {
+  .split-2 {
+    column-gap: 16px; /* was 32px */
+    row-gap: 16px;    /* keep vertical spacing tidy (optional) */
+  }
+}
+

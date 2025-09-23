@@ -828,3 +828,22 @@ section[id] {
   margin-top: 2px;    /* a little spacing under the degree */
 }
 
+/* 1) Tighten the actual space between the columns */
+#about-extras.split-2 {
+  column-gap: 12px !important;   /* was 32px via gap */
+  row-gap: 16px;                  /* keep vertical spacing tidy */
+}
+
+/* 2) Reduce list indentation inside both columns */
+#about-extras .col ul {
+  padding-left: 0.75em;           /* was 1.5em globally */
+  margin: 8px 0;                  /* slightly tighter */
+}
+
+/* 3) Make the Education list flush (no bullets/indent) */
+#about-extras .edu-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+#about-extras .edu-list li { margin-bottom: 10px; }

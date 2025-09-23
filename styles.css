@@ -847,3 +847,84 @@ section[id] {
   margin: 0;
 }
 #about-extras .edu-list li { margin-bottom: 10px; }
+
+/* ==== THEME VARIABLES ==== */
+:root{
+  --bg: #ffffff;
+  --text: #333333;
+  --muted: #666666;
+  --card: #f6f6f6;
+  --surface: #f9f9f9;
+  --border: #e6e6e6;
+  --accent: #4e2a84;      /* your purple */
+  --accent-weak: #e8e1f1; /* light purple background */
+  --link: #4e2a84;
+}
+
+html[data-theme="dark"]{
+  --bg: #0f1115;
+  --text: #e6e6e6;
+  --muted: #b4b4b4;
+  --card: #16181f;
+  --surface: #16181f;
+  --border: #2a2d36;
+  --accent: #a58ad8;
+  --accent-weak: #231a39;
+  --link: #c7b3ff;
+}
+
+/* ==== LIGHT/DARK OVERRIDES (non-destructive) ==== */
+body{ background: var(--bg); color: var(--text); }
+
+h2{ color: var(--accent); }  /* overrides earlier h2 color */
+a{ color: var(--link); }
+
+hr{ border-top: 1px solid var(--border); }
+
+.sidebar-card{
+  background: var(--card);
+  border-color: var(--border);
+}
+.nav a{ color: var(--muted); }
+.nav a:hover{ color: var(--text); }
+.nav a.active{
+  color: var(--text) !important;
+  background: var(--accent-weak);
+}
+
+.research-item{
+  background: var(--surface);
+  border-left-color: var(--accent);
+}
+.abstract-content{
+  background: var(--card);
+  border-color: var(--border);
+}
+.news-box{
+  background: var(--accent-weak);
+  border-left-color: var(--accent);
+}
+
+/* Buttons/links that use the accent */
+.abstract-toggle{ background: var(--accent); }
+.abstract-toggle:hover{ background: color-mix(in oklab, var(--accent), #000 15%); }
+.ssrn-link{
+  color: var(--accent);
+  border-color: var(--accent);
+}
+.ssrn-link:hover{
+  background: var(--accent);
+  color: #fff;
+}
+
+/* Tiny polish for the toggle button */
+.theme-toggle{
+  margin-top: 10px;
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--text);
+  border-radius: 8px;
+  padding: 6px 10px;
+  cursor: pointer;
+}
+.theme-toggle:hover{ filter: brightness(1.05); }

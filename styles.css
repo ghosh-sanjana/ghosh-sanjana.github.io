@@ -804,3 +804,18 @@ section[id] {
     width: 200px;
   }
 }
+
+/* Two-column layout for Interests & Education */
+.split-2 {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 32px;
+  align-items: start;
+  margin: 12px 0 24px;
+}
+.split-2 .col { min-width: 0; }   /* prevents overflow from long lines */
+
+/* Stack on smaller screens */
+@media (max-width: 900px) {
+  .split-2 { grid-template-columns: 1fr; }
+}

@@ -59,9 +59,9 @@ body {
 .sidebar-card header img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  transform: scale(1.45);
-  transform-origin: top center ;
+  object-fit: cover;         /* keep the circular crop */
+  object-position: 50% 20%;  /* show more head/torso; tweak 10–30% */
+  transform: none;           /* remove the zoom */
 }
 
 .sidebar .role {

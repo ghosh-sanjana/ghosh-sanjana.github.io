@@ -809,7 +809,8 @@ section[id] {
 .split-2 {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  gap: 32px;
+  column-gap: 12px;  /* tighter horizontal gap */
+  row-gap: 16px;     /* keep some vertical spacing */
   align-items: start;
   margin: 12px 0 24px;
 }
@@ -825,13 +826,5 @@ section[id] {
   color: #777;        /* lighter gray; try #888 or #999 for lighter */
   font-size: 0.9rem;  /* smaller than body (16px) */
   margin-top: 2px;    /* a little spacing under the degree */
-}
-
-/* Tighter space between Interests & Education columns */
-@media (min-width: 901px) {
-  .split-2 {
-    column-gap: 16px; /* was 32px */
-    row-gap: 16px;    /* keep vertical spacing tidy (optional) */
-  }
 }
 

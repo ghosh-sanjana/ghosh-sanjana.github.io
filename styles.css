@@ -819,3 +819,10 @@ section[id] {
 @media (max-width: 900px) {
   .split-2 { grid-template-columns: 1fr; }
 }
+
+/* Education: make school lighter & smaller */
+.edu-list .school {
+  color: #777;        /* lighter gray; try #888 or #999 for lighter */
+  font-size: 0.9rem;  /* smaller than body (16px) */
+  margin-top: 2px;    /* a little spacing under the degree */
+}

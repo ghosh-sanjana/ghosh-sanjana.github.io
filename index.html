@@ -197,29 +197,36 @@
 
     // Active navigation highlighting
     function updateActiveNav() {
-      const sections = document.querySelectorAll('section[id]');
-      const navLinks = document.querySelectorAll('.nav-link');
-      
-      let currentSection = '';
-      
-      sections.forEach(section => {
-        const rect = section.getBoundingClientRect();
-        if (rect.top <= 150 && rect.bottom >= 150) {
-          currentSection = section.id;
-        }
-      });
-      
-      navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === '#' + currentSection) {
-          link.classList.add('active');
-        }
-      });
+    const sections = Array.from(document.querySelectorAll('section[id]'));
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    const offset = 160; // match your scroll offset / header spacing
+    const scrollPos = window.scrollY + offset;
+
+    let currentSection = sections[0]?.id;
+
+    for (const sec of sections) {
+      const top = sec.offsetTop;
+      const bottom = top + sec.offsetHeight;
+      if (scrollPos >= top && scrollPos < bottom) {
+        currentSection = sec.id;
+        break;
+      }
     }
 
-    // Update active navigation on scroll
-    window.addEventListener('scroll', updateActiveNav);
-    window.addEventListener('load', updateActiveNav);
+    // If you're at (or essentially at) the bottom, force the last section
+    if (window.innerHeight + window.scrollY >= document.body.scrollHeight - 2) {
+      currentSection = sections[sections.length - 1]?.id;
+    }
+
+    navLinks.forEach(link => {
+      const href = link.getAttribute('href');
+      link.classList.toggle('active', href === '#' + currentSection);
+    });
+  }
+
+  window.addEventListener('scroll', updateActiveNav);
+  window.addEventListener('load', updateActiveNav);
 
     // Smooth scrolling for navigation links
     document.querySelectorAll('.nav-link').forEach(link => {

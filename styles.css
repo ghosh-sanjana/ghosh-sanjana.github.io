@@ -858,11 +858,20 @@ section[id] {
   font-style: italic;
 }
 
+.teaching-list { margin: 0; }                /* keep list tight */
+
 .teaching-note {
-  margin-top: 8px;
-  font-size: 0.95rem;   /* a bit smaller */
-  color: #999;          /* lighter text */
-  font-style: italic;   /* light italics */
+  margin: 2px 0 0;                           /* tiny gap */
+  padding-left: 1.5em;                        /* matches your global ul padding-left */
+  font-size: 0.85rem;
+  color: rgba(0,0,0,0.38);
+  font-style: italic;
+  font-weight: 300;
+}
+
+/* keep alignment consistent on mobile where your ul padding is smaller */
+@media (max-width: 768px) {
+  .teaching-note { padding-left: 1.2em; }
 }
 
 /* Optional: automatically add parentheses */

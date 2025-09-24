@@ -858,6 +858,13 @@ section[id] {
   font-style: italic;
 }
 
+.teaching-note {
+  margin-top: 8px;
+  font-size: 0.95rem;   /* a bit smaller */
+  color: #666;          /* lighter text */
+  font-style: italic;   /* light italics */
+}
+
 /* Optional: automatically add parentheses */
 .research-item h3 .authors::before { content: " ("; }
 .research-item h3 .authors::after  { content: ")"; }

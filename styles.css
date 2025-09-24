@@ -847,3 +847,16 @@ section[id] {
   margin: 0;
 }
 #about-extras .edu-list li { margin-bottom: 10px; }
+
+/* Co-author styling in paper headings */
+.research-item h3 .authors {
+  font-weight: 400;     /* not bold */
+  font-size: 0.95em;    /* just a touch smaller than the h3 */
+  color: inherit;       /* same color as the title */
+  font-style: normal;   /* ensure not italic */
+  margin-left: .5rem;
+}
+
+/* Optional: automatically add parentheses */
+.research-item h3 .authors::before { content: " ("; }
+.research-item h3 .authors::after  { content: ")"; }

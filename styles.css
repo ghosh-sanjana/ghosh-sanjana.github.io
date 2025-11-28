@@ -331,7 +331,7 @@ a.inline-link:hover {
 }
 
 .draft-tag {
-  font-size: 0.7em;        /* smaller */
+  font-size: 0.85em;        /* smaller */
   font-weight: 300;        /* lighter */
   color: #555;             /* softer gray */
   margin-left: 8px;        /* spacing from title */

@@ -331,11 +331,13 @@ a.inline-link:hover {
 }
 
 .subsection-title {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   font-weight: 600;
-  color: #555;
+  color: #444;
   margin-top: 2rem;
   margin-bottom: 1rem;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 0.3rem;
 }
 
 .paper-actions {
